@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <ActionToContainerMapping>
+      <ActionContainer Id="EditEventParametersContainer" IsNewNode="True">
+        <ActionLink ActionId="SetEventParametersAction" IsNewNode="True" />
+      </ActionContainer>
+    </ActionToContainerMapping>
+  </ActionDesign>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="Decathalon_ListView" Index="10" />
+          <Item Id="Competitor_NavItem" ViewId="Competitor_ListView" Index="20" IsNewNode="True" />
+          <Item Id="DecathalonEventDefinition_NavItem" ViewId="DecathalonEventDefinition_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemAspNetModule" Version="18.2.7.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="18.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Decathalon_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="Decathalon_Processes" ActionContainer="Processes" Caption="Decathalon_Processes(12)" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="17.640449438202246">
+            <LayoutGroup Id="Decathalon" RelativeSize="100">
+              <LayoutItem Id="DecathalonName" RelativeSize="29.29936305732484" />
+              <LayoutItem Id="DecathalonStartDate" RelativeSize="21.656050955414013" />
+              <LayoutItem Id="DecathalonEndDate" RelativeSize="21.656050955414013" />
+              <LayoutItem Id="Decathalon_Processes" ViewItem="Decathalon_Processes" Index="3" RelativeSize="27.388535031847134" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="82.359550561797747">
+            <LayoutGroup Id="Events" RelativeSize="100">
+              <LayoutItem Id="Events" RelativeSize="100" Index="0" />
+            </LayoutGroup>
+            <LayoutGroup Id="Competitors" RelativeSize="100">
+              <LayoutItem Id="Competitors" Index="0" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DecathalonEvent_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="EditScoringParameters_Container_Item" ActionContainer="EditEventParametersContainer" Caption="Edit Scoring Parameters" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="17.5">
+            <LayoutGroup Id="DecathalonEvent" RelativeSize="100" Direction="Vertical" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="EventScore_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="14.642857142857142">
+            <LayoutGroup Id="EventScore" RelativeSize="100">
+              <LayoutItem Id="Competitor" Index="0" RelativeSize="37.398373983739837" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="85.357142857142861">
+            <LayoutItem Id="Notes" RelativeSize="100" CaptionLocation="Top" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

@@ -55,6 +55,7 @@
     <Reference Include="DevExpress.ExpressApp.Objects.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Xpo.v18.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -75,7 +76,7 @@
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Web.v18.2">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Persistent.Base.v18.2">
       <SpecificVersion>False</SpecificVersion>
@@ -91,14 +92,14 @@
     </Reference>
     <Reference Include="DevExpress.Utils.v18.2">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Web.ASPxThemes.v18.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.Web.ASPxTreeList.v18.2">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Web.v18.2">
       <SpecificVersion>False</SpecificVersion>

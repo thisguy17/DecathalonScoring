@@ -12,6 +12,9 @@ namespace DecathalonScoring.Web {
         private DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule module2;
         private DecathalonScoring.Module.DecathalonScoringModule module3;
         private DecathalonScoring.Module.Web.DecathalonScoringAspNetModule module4;
+        private DevExpress.ExpressApp.Security.SecurityStrategyComplex securityStrategyComplex1;
+        private DevExpress.ExpressApp.Security.AuthenticationStandard authenticationStandard1;
+        private DevExpress.ExpressApp.Security.SecurityModule securityModule1;
         private DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule objectsModule;
 
         #region Default XAF configuration options (https://www.devexpress.com/kb=T501418)
@@ -80,7 +83,21 @@ namespace DecathalonScoring.Web {
             this.module3 = new DecathalonScoring.Module.DecathalonScoringModule();
             this.module4 = new DecathalonScoring.Module.Web.DecathalonScoringAspNetModule();
             this.objectsModule = new DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule();
+            this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
+            this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
+            this.authenticationStandard1 = new DevExpress.ExpressApp.Security.AuthenticationStandard();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // securityStrategyComplex1
+            // 
+            this.securityStrategyComplex1.AllowAnonymousAccess = false;
+            this.securityStrategyComplex1.Authentication = this.authenticationStandard1;
+            this.securityStrategyComplex1.RoleType = typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyRole);
+            this.securityStrategyComplex1.UserType = typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser);
+            // 
+            // authenticationStandard1
+            // 
+            this.authenticationStandard1.LogonParametersType = typeof(DevExpress.ExpressApp.Security.AuthenticationStandardLogonParameters);
             // 
             // DecathalonScoringAspNetApplication
             // 
@@ -88,9 +105,11 @@ namespace DecathalonScoring.Web {
             this.CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
+            this.Modules.Add(this.objectsModule);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.module4);
-            this.Modules.Add(this.objectsModule);
+            this.Modules.Add(this.securityModule1);
+            this.Security = this.securityStrategyComplex1;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.DecathalonScoringAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

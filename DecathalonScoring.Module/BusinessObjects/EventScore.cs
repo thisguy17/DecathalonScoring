@@ -34,6 +34,11 @@ namespace DecathalonScoring.Module.BusinessObjects
             get { return _mEvent; }
             set { SetPropertyValue("Event", ref _mEvent, value); }
         }
+
+        public Decathalon Decathalon
+        {
+            get { return Event.Decathalon; }
+        }
         
         public void SetPoints(double value)
         {

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="EnterEventScores_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="ScoreParameters" View="EnterEventScores_ScoreParameters_ListView_CreateScore" />
+      </Items>
+    </DetailView>
+  </Views>
+</Application>

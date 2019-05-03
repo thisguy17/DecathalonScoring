@@ -111,6 +111,24 @@
     <Compile Include="Controllers\DecathalonDetailViewController.Designer.cs">
       <DependentUpon>DecathalonDetailViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\EnterEventScoresDetailViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\EnterEventScoresDetailViewController.Designer.cs">
+      <DependentUpon>EnterEventScoresDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\EventDetailViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\EventDetailViewController.Designer.cs">
+      <DependentUpon>EventDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\NewEventScoreListViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\NewEventScoreListViewController.Designer.cs">
+      <DependentUpon>NewEventScoreListViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="WebModule.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -122,6 +140,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Controllers\DecathalonDetailViewController.resx">
       <DependentUpon>DecathalonDetailViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\EnterEventScoresDetailViewController.resx">
+      <DependentUpon>EnterEventScoresDetailViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\EventDetailViewController.resx">
+      <DependentUpon>EventDetailViewController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Properties\licenses.licx" />

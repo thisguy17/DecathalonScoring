@@ -29,25 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.DecathalonDetailViewController_AddScoreAction = new DevExpress.ExpressApp.Actions.SimpleAction(this.components);
+            this.LeaderboardAction = new DevExpress.ExpressApp.Actions.PopupWindowShowAction(this.components);
             // 
-            // DecathalonDetailViewController_AddScoreAction
+            // LeaderboardAction
             // 
-            this.DecathalonDetailViewController_AddScoreAction.Caption = "Add Score";
-            this.DecathalonDetailViewController_AddScoreAction.Category = "Processes";
-            this.DecathalonDetailViewController_AddScoreAction.ConfirmationMessage = null;
-            this.DecathalonDetailViewController_AddScoreAction.Id = "DecathalonDetailViewController_AddScoreAction";
-            this.DecathalonDetailViewController_AddScoreAction.ToolTip = null;
-            this.DecathalonDetailViewController_AddScoreAction.Execute += new DevExpress.ExpressApp.Actions.SimpleActionExecuteEventHandler(this.DecathalonDetailViewController_AddScoreAction_Execute);
+            this.LeaderboardAction.AcceptButtonCaption = null;
+            this.LeaderboardAction.CancelButtonCaption = null;
+            this.LeaderboardAction.Caption = "Leaderboard";
+            this.LeaderboardAction.Category = "Processes";
+            this.LeaderboardAction.ConfirmationMessage = null;
+            this.LeaderboardAction.Id = "LeaderboardAction";
+            this.LeaderboardAction.ToolTip = null;
+            this.LeaderboardAction.CustomizePopupWindowParams += new DevExpress.ExpressApp.Actions.CustomizePopupWindowParamsEventHandler(this.LeaderboardAction_CustomizePopupWindowParams);
+            this.LeaderboardAction.Execute += new DevExpress.ExpressApp.Actions.PopupWindowShowActionExecuteEventHandler(this.LeaderboardAction_Execute);
             // 
             // DecathalonDetailViewController
             // 
-            this.Actions.Add(this.DecathalonDetailViewController_AddScoreAction);
+            this.Actions.Add(this.LeaderboardAction);
 
         }
 
         #endregion
 
-        private DevExpress.ExpressApp.Actions.SimpleAction DecathalonDetailViewController_AddScoreAction;
+        private DevExpress.ExpressApp.Actions.PopupWindowShowAction LeaderboardAction;
     }
 }

@@ -89,9 +89,12 @@
     <Compile Include="BusinessObjects\Decathalon.cs" />
     <Compile Include="BusinessObjects\DecathalonEvent.cs" />
     <Compile Include="BusinessObjects\DecathalonEventDefinition.cs" />
+    <Compile Include="BusinessObjects\Nonpersistent\EnterEventScores.cs" />
     <Compile Include="BusinessObjects\EventScore.cs" />
     <Compile Include="BusinessObjects\EventScoreManager.cs" />
-    <Compile Include="BusinessObjects\Nonpersistent\DecathalonEventParameters.cs" />
+    <Compile Include="BusinessObjects\Nonpersistent\LeaderBoard.cs" />
+    <Compile Include="BusinessObjects\Nonpersistent\NewEventScore.cs" />
+    <Compile Include="BusinessObjects\Nonpersistent\DecathalonScoreTotals.cs" />
     <Compile Include="BusinessObjects\ScoringParameter.cs" />
     <Compile Include="BusinessObjects\ScoringParameterGroup.cs" />
     <Compile Include="Controllers\DecathalonDetailViewController.cs">

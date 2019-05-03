@@ -88,21 +88,5 @@ namespace DecathalonScoring.Module.Controllers
             // Unsubscribe from previously subscribed events and release other references and resources.
             base.OnDeactivated();
         }
-
-        //private void SetEventParametersAction_Execute(object sender, PopupWindowShowActionExecuteEventArgs e)
-        //{
-        //    ThisCurrentObject.SetParameterA(((DecathalonEventParameters)e.PopupWindowViewCurrentObject).ParameterA);
-        //    ThisCurrentObject.SetParameterB(((DecathalonEventParameters)e.PopupWindowViewCurrentObject).ParameterB);
-        //    ThisCurrentObject.SetParameterC(((DecathalonEventParameters)e.PopupWindowViewCurrentObject).ParameterC);
-        //    ObjectSpace.CommitChanges();
-        //}
-
-        //private void SetEventParametersAction_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e)
-        //{
-        //    DecathalonEventParameters parametersObj = new DecathalonEventParameters(((XPObjectSpace)ObjectSpace).Session);
-        //    e.DialogController.SaveOnAccept = false;
-        //    e.View = Application.CreateDetailView(ObjectSpace, parametersObj, false);
-        //    ((DetailView)e.View).ViewEditMode = ViewEditMode.Edit;
-        //}
     }
 }

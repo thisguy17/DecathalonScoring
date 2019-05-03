@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Logo="ExpressAppLogo">
+  <NavigationItems NavigationStyle="Accordion" ShowImages="False" DefaultChildItemsDisplayStyle="List">
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="Competitor_NavItem" Caption="Competitor" ViewId="Competitor_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options UIType="TabbedMDI" FormStyle="Ribbon" ShowTabImage="False">
+    <LayoutManagerOptions EnableLayoutGroupImages="False" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="18.2.7.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="18.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="DecathalonEvent_DetailView">
+      <Items>
+        <StaticText Id="ScoringFunction" Caption="Function: A (P - B) ^ C" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100" TextAlignMode="UseParentOptions">
+          <LayoutGroup Id="SimpleEditors" Direction="Horizontal" RelativeSize="21.547619047619047">
+            <LayoutGroup Id="DecathalonEvent" RelativeSize="49.948927477017364" Direction="Vertical">
+              <LayoutGroup Id="DecathalonEvent_col1" RelativeSize="100" Direction="Vertical">
+                <LayoutItem Id="Decathalon" ViewItem="Decathalon" Index="0" RelativeSize="36.507936507936506" Removed="True" />
+                <LayoutItem Id="EventName" ViewItem="EventName" Index="0" RelativeSize="36.507936507936506" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="EventDate" ViewItem="EventDate" Index="1" RelativeSize="63.492063492063494" IsNewNode="True" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DecathalonEvent_col2" RelativeSize="50.132625994694962" Caption="DecathalonEvent_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="ParameterB" Index="0" RelativeSize="36.507936507936506" Removed="True" />
+                <LayoutItem Id="ParameterC" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="ParameterA" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Item1" ShowCaption="True" Caption="Scoring Parameters" CaptionLocation="Top" Index="1" RelativeSize="50.051072522982636" IsNewNode="True">
+              <LayoutItem Id="ParameterA" ViewItem="ParameterA" Index="0" RelativeSize="36.507936507936506" IsNewNode="True" />
+              <LayoutItem Id="ParameterB" ViewItem="ParameterB" Index="1" RelativeSize="26.984126984126984" IsNewNode="True" />
+              <LayoutItem Id="ParameterC" ViewItem="ParameterC" Index="2" RelativeSize="36.507936507936506" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="EventScores_Group" TextAlignMode="AlignWithChildren" Direction="Vertical" RelativeSize="78.452380952380949" Index="1">
+            <LayoutItem Id="EventScores" RelativeSize="100" SizeConstraintsType="Custom" MinSize="180, 140" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="EventScore_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="14.642857142857142">
+            <LayoutGroup Id="EventScore" RelativeSize="100">
+              <LayoutItem Id="Competitor" Index="0" RelativeSize="37.398373983739837" />
+              <LayoutItem Id="Performance" Index="1" RelativeSize="27.642276422764226" />
+              <LayoutItem Id="Score" Index="2" RelativeSize="34.959349593495936" />
+              <LayoutItem Id="Event" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="85.357142857142861">
+            <LayoutItem Id="Notes" RelativeSize="100" CaptionLocation="Top" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

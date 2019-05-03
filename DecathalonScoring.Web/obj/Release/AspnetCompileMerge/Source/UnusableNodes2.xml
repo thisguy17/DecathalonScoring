@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="DecathalonEvent_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs" RelativeSize="82.5">
+            <LayoutGroup Id="EventScores" RelativeSize="100" Index="0">
+              <LayoutItem Id="EventScores" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="ScoringParameterGroups" RelativeSize="100" Index="1">
+              <LayoutItem Id="ScoringParameterGroups" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="DecathalonEvent">
+              <LayoutGroup Id="DecathalonEvent_col1" RelativeSize="100">
+                <LayoutItem Id="EventName" Index="0" RelativeSize="50" />
+                <LayoutItem Id="EventDate" Index="1" RelativeSize="26.984126984126984" Removed="True" />
+                <LayoutItem Id="ScoringCalculationText" ViewItem="ScoringCalculationText" Index="1" RelativeSize="50" />
+                <LayoutItem Id="Decathalon" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DecathalonEvent_col2" RelativeSize="66.666666666666671" Direction="Horizontal" Caption="DecathalonEvent_col2" Removed="True">
+                <LayoutItem Id="ScoringCalculationText" Index="0" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="ScoringCalculationExpression" Index="1" RelativeSize="50" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign Id="ActionDesign">
+    <Actions Id="Actions">
+      <Action Id="SetEventParametersAction" ImageName="BO_Document" PaintStyle="Image" />
+    </Actions>
+  </ActionDesign>
+  <Views Id="Views">
+    <DetailView Id="DecathalonEvent_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="EventScores_Group" Direction="Vertical" RelativeSize="78.452380952380949">
+            <LayoutItem Id="EventScores" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="DecathalonEvent">
+              <LayoutGroup Id="DecathalonEvent_col2">
+                <LayoutItem Id="ParameterA" RelativeSize="36.507936507936506" Removed="True" />
+                <LayoutItem Id="ParameterB" RelativeSize="26.984126984126984" Removed="True" />
+                <LayoutItem Id="ParameterC" RelativeSize="36.507936507936506" Removed="True" />
+                <LayoutGroup Id="Autoacd1baae-3418-4650-919e-c2070a2b6c16">
+                  <LayoutItem Id="ParameterC" ViewItem="ParameterC" />
+                  <LayoutItem Id="ParameterB" ViewItem="ParameterB" />
+                  <LayoutItem Id="ParameterA" ViewItem="ParameterA" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="EventScore_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="EventScore">
+              <LayoutItem Id="Event" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

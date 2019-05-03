@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="NewEventScore_ScoreParameters_ListView_CreateScore">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Name" PropertyName="Name" Width="400" SortIndex="0" SortOrder="Ascending" Index="0" />
+        <ColumnInfo Id="SequenceNumber" PropertyName="SequenceNumber" Width="50" Index="-1" />
+        <ColumnInfo Id="ParameterTextView" PropertyName="ParameterTextView" Width="70" Index="-1" />
+        <ColumnInfo Id="ParameterExpressionView" PropertyName="ParameterExpressionView" Width="70" Index="-1" />
+        <ColumnInfo Id="OperatorValue" PropertyName="OperatorValue" Width="70" Index="-1" />
+        <ColumnInfo Id="OperatorString" PropertyName="OperatorString" Width="70" Index="-1" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

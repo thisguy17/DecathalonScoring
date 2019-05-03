@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <ActionToContainerMapping>
+      <ActionContainer Id="EditEventParametersContainer" IsNewNode="True">
+        <ActionLink ActionId="SetEventParametersAction" IsNewNode="True" />
+      </ActionContainer>
+    </ActionToContainerMapping>
+  </ActionDesign>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="Decathalon_ListView" Index="10" />
+          <Item Id="Competitor_NavItem" ViewId="Competitor_ListView" Index="20" IsNewNode="True" />
+          <Item Id="DecathalonEventDefinition_NavItem" ViewId="DecathalonEventDefinition_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemAspNetModule" Version="18.2.7.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="18.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Decathalon_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="Decathalon_Processes" ActionContainer="Processes" Caption="Decathalon_Processes(12)" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="17.640449438202246">
+            <LayoutGroup Id="Decathalon" RelativeSize="100">
+              <LayoutItem Id="DecathalonName" RelativeSize="29.29936305732484" />
+              <LayoutItem Id="DecathalonStartDate" RelativeSize="21.656050955414013" />
+              <LayoutItem Id="DecathalonEndDate" RelativeSize="21.656050955414013" />
+              <LayoutItem Id="Decathalon_Processes" ViewItem="Decathalon_Processes" Index="3" RelativeSize="27.388535031847134" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="82.359550561797747">
+            <LayoutGroup Id="Events" RelativeSize="100">
+              <LayoutItem Id="Events" RelativeSize="100" Index="0" />
+            </LayoutGroup>
+            <LayoutGroup Id="Competitors" RelativeSize="100">
+              <LayoutItem Id="Competitors" Index="0" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DecathalonEvent_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="@e95c518f-604d-41db-8b1e-0524081f08ab" ActionContainer="Processes" Caption="@e95c518f-604d-41db-8b1e-0524081f08ab(10)" IsNewNode="True" />
+        <ActionContainerViewItem Id="EditScoringParameters_Container_Item" ActionContainer="EditEventParametersContainer" Caption="Edit Scoring Parameters" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="15.292233787029623">
+            <LayoutGroup Id="DecathalonEvent" RelativeSize="100" Direction="Vertical">
+              <LayoutItem Id="Decathalon" RelativeSize="24.083769633507853" />
+              <LayoutItem Id="EventName" RelativeSize="17.801047120418847" />
+              <LayoutItem Id="EventDate" RelativeSize="17.801047120418847" />
+              <LayoutItem Id="Definition" RelativeSize="17.801047120418847" />
+              <LayoutItem Id="@e95c518f-604d-41db-8b1e-0524081f08ab" ViewItem="@e95c518f-604d-41db-8b1e-0524081f08ab" Index="4" RelativeSize="22.513089005235603" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="EventScores_Group" Direction="Vertical" RelativeSize="84.70776621297037">
+            <LayoutItem Id="EventScores" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DecathalonEvent_EventScores_ListView">
+      <Columns>
+        <ColumnInfo Id="Decathalon" Index="-1" />
+        <ColumnInfo Id="Points" Index="0" />
+        <ColumnInfo Id="Competitor" Index="1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="EnterEventScores_DetailView">
+      <Items>
+        <PropertyEditor Id="ScoreParameters" View="" />
+      </Items>
+    </DetailView>
+    <DetailView Id="EventScore_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="14.642857142857142">
+            <LayoutGroup Id="EventScore" RelativeSize="100">
+              <LayoutItem Id="Competitor" Index="0" RelativeSize="37.398373983739837" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="85.357142857142861">
+            <LayoutItem Id="Notes" RelativeSize="100" CaptionLocation="Top" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="NewEventScore_ScoreParameters_ListView_CreateScore" ClassName="DecathalonScoring.Module.BusinessObjects.Nonpersistent.NewEventScore" DetailViewID="NewEventScore_DetailView" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Group" PropertyName="Group" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Oid" PropertyName="Oid" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Value" PropertyName="Value" Width="50" Index="5" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ScoringParameter_DetailView_CreateScore" ClassName="DecathalonScoring.Module.BusinessObjects.ScoringParameter" IsNewNode="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="Name" PropertyName="Name" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="Oid" PropertyName="Oid" IsNewNode="True" />
+        <PropertyEditor Id="OperatorString" PropertyName="OperatorString" IsNewNode="True" />
+        <PropertyEditor Id="OperatorValue" PropertyName="OperatorValue" IsNewNode="True" />
+        <PropertyEditor Id="ParameterExpressionView" PropertyName="ParameterExpressionView" IsNewNode="True" />
+        <PropertyEditor Id="ParameterTextView" PropertyName="ParameterTextView" IsNewNode="True" />
+        <PropertyEditor Id="SequenceNumber" PropertyName="SequenceNumber" IsNewNode="True" />
+        <PropertyEditor Id="Value" PropertyName="Value" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="ScoringParameter" Index="0" Direction="Vertical" ShowCaption="True" Caption="Scoring Parameter" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="ScoringParameter_col1" Index="0" ShowCaption="False" RelativeSize="100" Caption="ScoringParameter_col1" IsNewNode="True">
+                <LayoutItem Id="Name" ViewItem="Name" ShowCaption="" Index="0" RelativeSize="3.8623005877413936" IsNewNode="True" />
+                <LayoutItem Id="Value" ViewItem="Value" Index="1" RelativeSize="96.137699412258613" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

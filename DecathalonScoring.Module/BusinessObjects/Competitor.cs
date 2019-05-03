@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using System.Drawing;
+using System.IO;
 
 namespace DecathalonScoring.Module.BusinessObjects
 {
@@ -53,6 +55,38 @@ namespace DecathalonScoring.Module.BusinessObjects
             get { return string.IsNullOrEmpty(NickName) ? FirstName + " \"" + NickName + "\" " + LastName : FirstName + " " + LastName; }
         }
 
+        private FileData _mCompetitorImage;
+        [FileTypeFilter("ImagesOnly", new string[] { ".jpg", ".jpeg", ".png", ".bmp" })]
+        public FileData CompetitorImage
+        {
+            get { return _mCompetitorImage; }
+            set { SetPropertyValue("CompetitorImage", ref _mCompetitorImage, value); }
+        }
+
+        private Image _mImage;
+        [ImageEditor(ListViewImageEditorMode = ImageEditorMode.PictureEdit, DetailViewImageEditorMode = ImageEditorMode.PictureEdit, ListViewImageEditorCustomHeight = 40)]
+        public Image Image
+        {
+            get
+            {
+                if (_mImage == null && CompetitorImage != null)
+                {
+                    try
+                    {
+                        MemoryStream stream = new MemoryStream();
+                        CompetitorImage.SaveToStream(stream);
+                        stream.Position = 0;
+                        _mImage = Image.FromStream(stream);
+                    }
+                    catch (Exception e)
+                    {
+                        throw new UserFriendlyException("Could not load image..." + Environment.NewLine + e.Message);
+                    }
+                }
+                return _mImage;
+            }
+        }
+
         [Association("Competitor-Scores")]
         public XPCollection<EventScore> Scores
         {
@@ -63,6 +97,12 @@ namespace DecathalonScoring.Module.BusinessObjects
         public XPCollection<Decathalon> Decathalons
         {
             get { return GetCollection<Decathalon>("Decathalons"); }
+        }
+
+        protected override void OnChanged(string propertyName, object oldValue, object newValue)
+        {
+            base.OnChanged(propertyName, oldValue, newValue);
+            if (propertyName == "CompetitorImage") _mImage = null;
         }
     }
 }

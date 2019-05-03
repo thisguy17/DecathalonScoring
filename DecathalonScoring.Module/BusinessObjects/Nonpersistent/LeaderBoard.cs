@@ -62,7 +62,7 @@ namespace DecathalonScoring.Module.BusinessObjects.Nonpersistent
             {
                 var leadCompetitors = new XPCollection<DecathalonScoreTotals>(os.Session);
                 leadCompetitors.LoadingEnabled = false;
-                foreach (var competitor in Decathalon.Competitors)
+                foreach (var competitor in Decathalon.Competitors.Where(c => c.Scores.Count > 0))
                 {
                     DecathalonScoreTotals dst = new DecathalonScoreTotals(os.Session);
                     dst.SetCompetitor(os.GetObject(competitor));

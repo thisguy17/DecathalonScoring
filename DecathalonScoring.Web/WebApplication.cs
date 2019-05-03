@@ -15,6 +15,7 @@ namespace DecathalonScoring.Web {
         private DevExpress.ExpressApp.Security.SecurityStrategyComplex securityStrategyComplex1;
         private DevExpress.ExpressApp.Security.AuthenticationStandard authenticationStandard1;
         private DevExpress.ExpressApp.Security.SecurityModule securityModule1;
+        private DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule fileAttachmentsAspNetModule1;
         private DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule objectsModule;
 
         #region Default XAF configuration options (https://www.devexpress.com/kb=T501418)
@@ -84,8 +85,9 @@ namespace DecathalonScoring.Web {
             this.module4 = new DecathalonScoring.Module.Web.DecathalonScoringAspNetModule();
             this.objectsModule = new DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule();
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
-            this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.authenticationStandard1 = new DevExpress.ExpressApp.Security.AuthenticationStandard();
+            this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
+            this.fileAttachmentsAspNetModule1 = new DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
@@ -109,6 +111,7 @@ namespace DecathalonScoring.Web {
             this.Modules.Add(this.module3);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule1);
+            this.Modules.Add(this.fileAttachmentsAspNetModule1);
             this.Security = this.securityStrategyComplex1;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.DecathalonScoringAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

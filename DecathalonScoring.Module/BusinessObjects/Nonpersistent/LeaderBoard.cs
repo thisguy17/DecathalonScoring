@@ -12,6 +12,7 @@ using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using DevExpress.ExpressApp.Xpo;
+using System.Drawing;
 
 namespace DecathalonScoring.Module.BusinessObjects.Nonpersistent
 {
@@ -42,8 +43,15 @@ namespace DecathalonScoring.Module.BusinessObjects.Nonpersistent
             get { return _mDecathalon; }
         }
 
+        public DecathalonScoreTotals Leader
+        {
+            get { return LeadCompetitors[0]; }
+        }
+
         public void SetLeadCompetitors(XPCollection<DecathalonScoreTotals> value)
         {
+            value.Sorting = new SortingCollection();
+            value.Sorting.Add(new SortProperty("TotalDecathalonPoints", DevExpress.Xpo.DB.SortingDirection.Descending));
             _mLeadCompetitors = value;
         }
         private XPCollection<DecathalonScoreTotals> _mLeadCompetitors;

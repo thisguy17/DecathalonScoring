@@ -158,7 +158,11 @@
     <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Images\Logo.png" />
+    <Content Include="Images\Kris.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Logo.jpg" />
+    <Content Include="Images\Logo_old.png" />
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +221,7 @@
     <Content Include="Model.Desktop.xafml" />
     <Content Include="Model.Tablet.xafml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="ReadMe.txt" />
     <Content Include="UnusableNodes.xml">
       <DependentUpon>Model.xafml</DependentUpon>
@@ -239,6 +244,10 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="UnusableNodes5.xml">
+      <DependentUpon>Model.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="UnusableNodes6.xml">
       <DependentUpon>Model.xafml</DependentUpon>
       <SubType>Designer</SubType>
     </Content>

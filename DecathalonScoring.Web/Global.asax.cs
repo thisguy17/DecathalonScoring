@@ -36,8 +36,8 @@ namespace DecathalonScoring.Web {
 //#endif
 //#if DEBUG
 //            if(System.Diagnostics.Debugger.IsAttached && WebApplication.Instance.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
-            WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
-            //WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.Never;
+            //WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
+            WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.Never;
             //            }
             //#endif
             WebApplication.Instance.Setup();

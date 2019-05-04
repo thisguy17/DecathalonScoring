@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application>
+<Application Logo="Kris.jpg">
   <ActionDesign>
     <ActionToContainerMapping>
       <ActionContainer Id="EditEventParametersContainer" IsNewNode="True">
@@ -11,9 +11,10 @@
     <Items>
       <Item Id="Default">
         <Items>
-          <Item Id="Decathalon_ListView" Index="10" />
-          <Item Id="Competitor_NavItem" ViewId="Competitor_ListView" Index="20" IsNewNode="True" />
-          <Item Id="DecathalonEventDefinition_NavItem" ViewId="DecathalonEventDefinition_ListView" IsNewNode="True" />
+          <Item Id="Decathalon_ListView" Index="20" />
+          <Item Id="Competitor_NavItem" ViewId="Competitor_ListView" Index="30" IsNewNode="True" />
+          <Item Id="DecathalonEventDefinition_NavItem" ViewId="DecathalonEventDefinition_ListView" Index="40" IsNewNode="True" />
+          <Item Id="MyDetails" Index="50" />
         </Items>
       </Item>
     </Items>
@@ -77,6 +78,29 @@
         <ColumnInfo Id="Competitor" Index="1" />
       </Columns>
     </ListView>
+    <DetailView Id="DecathalonScoreTotals_DetailView_Leader" ClassName="DecathalonScoring.Module.BusinessObjects.Nonpersistent.DecathalonScoreTotals" AllowEdit="False" IsNewNode="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="Competitor" PropertyName="Competitor" Caption="Champion Name" IsNewNode="True" />
+        <PropertyEditor Id="Competitor.FullName" PropertyName="Competitor.FullName" Caption="Champion" IsNewNode="True" />
+        <PropertyEditor Id="Competitor.NickName" PropertyName="Competitor.NickName" Caption="Title" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="Decathalon" PropertyName="Decathalon" IsNewNode="True" />
+        <PropertyEditor Id="Image" PropertyName="Image" IsNewNode="True" />
+        <PropertyEditor Id="Oid" PropertyName="Oid" IsNewNode="True" />
+        <PropertyEditor Id="TotalDecathalonPoints" PropertyName="TotalDecathalonPoints" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="DecathalonScoreTotals" Index="0" ShowCaption="False" RelativeSize="100" Caption="DecathalonScoreTotals" IsNewNode="True">
+              <LayoutItem Id="Image" ViewItem="Image" Index="0" RelativeSize="81.875993640699519" ShowCaption="False" HorizontalAlign="Center" IsNewNode="True" />
+              <LayoutItem Id="Competitor.FullName" ViewItem="Competitor.FullName" Index="1" RelativeSize="5.0874403815580287" IsNewNode="True" />
+              <LayoutItem Id="Competitor.NickName" ViewItem="Competitor.NickName" Index="2" RelativeSize="5.0874403815580287" IsNewNode="True" />
+              <LayoutItem Id="TotalDecathalonPoints" ViewItem="TotalDecathalonPoints" ShowCaption="" Index="3" RelativeSize="7.94912559618442" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="EnterEventScores_DetailView">
       <Items>
         <PropertyEditor Id="ScoreParameters" View="" />
@@ -96,6 +120,27 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="Leaderboard_DetailView" AllowEdit="False" AllowDelete="False" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="Leader" PropertyEditorType="DevExpress.ExpressApp.Editors.DetailPropertyEditor" View="DecathalonScoreTotals_DetailView_Leader" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="17.879746835443036">
+            <LayoutGroup Id="Leaderboard" Caption="Leader" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="The Greatest Leader of All Time (as of now)" IsNewNode="True">
+                <LayoutItem Id="Leader" ViewItem="Leader" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Leader" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="LeadCompetitors_Group" Direction="Vertical" RelativeSize="82.120253164556956">
+            <LayoutItem Id="LeadCompetitors" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Leaderboard_LeadCompetitors_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" AllowUnlink="False" />
     <ListView Id="NewEventScore_ScoreParameters_ListView_CreateScore" ClassName="DecathalonScoring.Module.BusinessObjects.Nonpersistent.NewEventScore" DetailViewID="NewEventScore_DetailView" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="Group" PropertyName="Group" Width="70" Index="-1" IsNewNode="True" />

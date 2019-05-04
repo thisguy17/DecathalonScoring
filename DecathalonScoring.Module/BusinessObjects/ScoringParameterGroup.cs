@@ -110,7 +110,7 @@ namespace DecathalonScoring.Module.BusinessObjects
                     case Operator.Multiply:
                         return "*";
                     case Operator.Divide:
-                        return "//";
+                        return "/";
                     default:
                         return "";
                 }

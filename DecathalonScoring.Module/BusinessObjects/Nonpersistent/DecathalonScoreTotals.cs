@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using System.Drawing;
 
 namespace DecathalonScoring.Module.BusinessObjects.Nonpersistent
 {
@@ -50,6 +51,19 @@ namespace DecathalonScoring.Module.BusinessObjects.Nonpersistent
         public Competitor Competitor
         {
             get { return _mCompetitor; }
+        }
+
+        [ImageEditor(ListViewImageEditorMode = ImageEditorMode.PictureEdit, DetailViewImageEditorMode = ImageEditorMode.PictureEdit, ListViewImageEditorCustomHeight = 40)]
+        public Image Image
+        {
+            get
+            {
+                if(Competitor == null)
+                {
+                    return null;
+                }
+                return Competitor.Image;
+            }
         }
 
         public double TotalDecathalonPoints

@@ -57,6 +57,7 @@ namespace DecathalonScoring.Module.BusinessObjects
 
         private FileData _mCompetitorImage;
         [FileTypeFilter("ImagesOnly", new string[] { ".jpg", ".jpeg", ".png", ".bmp" })]
+        [VisibleInListView(false)]
         public FileData CompetitorImage
         {
             get { return _mCompetitorImage; }
@@ -69,7 +70,7 @@ namespace DecathalonScoring.Module.BusinessObjects
         {
             get
             {
-                if (_mImage == null && CompetitorImage != null)
+                if (_mImage == null && CompetitorImage != null && CompetitorImage.Size > 0)
                 {
                     try
                     {
@@ -82,8 +83,9 @@ namespace DecathalonScoring.Module.BusinessObjects
                     {
                         throw new UserFriendlyException("Could not load image..." + Environment.NewLine + e.Message);
                     }
+                    return _mImage;
                 }
-                return _mImage;
+                return null;
             }
         }
 
